@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - MCCA Studio Design</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Grey background for the body */
+            color: #333;
+        }
+
+        /* Content Section */
+        .content {
+            width: 100%;
+            max-width: 1200px; /* Set a max-width for larger screens */
+            margin: 0 auto;
+            box-sizing: border-box; /* Include padding and border in width calculation */
+            background-color: white;
+           
+        }
+
+        /* About Us Section Styling */
+        #about-us {
+            padding: 40px;
+        }
+
+        .about-us-section {
+            text-align: center;
+        }
+
+        .about-us-section h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .about-us-section p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        /* Image Section */
+        .about-images {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .about-image-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .about-image-wrapper {
+            text-align: center;
+            width: 45%; /* Reduced width for the images */
+            overflow: hidden;
+            position: relative;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 250px; /* Reduced height */
+            object-fit: cover;
+            border-radius: 5px;
+            transition: all 0.3s ease; /* Transition for hover effect */
+        }
+
+        /* Hover Effect */
+        .about-image-wrapper:hover .about-image {
+            filter: brightness(0.7); /* Change brightness when hovered */
+            transform: scale(1.05); /* Slightly zoom the image on hover */
+        }
+
+        /* Name and Position Styling (Under the Image) */
+        .image-name, .image-position {
+            color: black; /* Black color for the text */
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .image-name {
+            font-weight: bold;
+        }
+
+        .image-position {
+            font-size: 14px;
+            color: #555; /* Slightly lighter color for position */
+        }
+
+
+
+        /* Navigation Bar */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color:black;
+            color: blue;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            padding-top: 60px;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu ul li {
+            padding: 15px 20px;
+            border-bottom: 1px solid #444;
+        }
+
+        .nav-menu ul li a {
+            color:white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-menu ul li a:hover {
+            text-decoration: underline;
+            color: #25D366;
+        }
+
+        /* Hamburger Icon */
+        .hamburger {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            color: black;
+        }
+
+        .hamburger:hover {
+            color: #ccc;
+        }
+
+        /* Close Icon */
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+
+
+
+
+
+
+
+ /* Footer Section */
+ .footer {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto; /* Center footer horizontally */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+}
+
+/* Left: Logo */
+.footer-left img {
+    width: 100px; /* Adjust logo size */
+    cursor: pointer;
+}
+
+.footer-left img:hover {
+    opacity: 0.8; /* Hover effect for logo */
+}
+
+/* Center: Social Media Icons */
+.footer-center {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between icons */
+}
+
+.footer-center i {
+    font-size: 36px; /* Increased icon size */
+    color: #fff;
+    cursor: pointer;
+}
+
+.footer-center i:hover {
+    color: #0077b5; /* Change color on hover */
+}
+
+/* Right: Message and WhatsApp Icons */
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px; /* Space between icons */
+}
+
+.footer-right a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px; /* Increased icon size */
+    display: flex;
+    align-items: center;
+}
+
+.footer-right a:hover {
+    color: #0077b5; /* Hover effect */
+}
+
+/* Bottom: Copyright */
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    width: 100%;
+}
+
+/* Fix the message and WhatsApp icons to the right */
+.footer-right-fixed {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Message Icon (Black background) */
+.footer-right-fixed .message-icon {
+    background-color: black; /* Black background */
+    padding: 15px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* WhatsApp Icon (Green background) */
+.footer-right-fixed .whatsapp-icon {
+    background-color: #25D366; /* WhatsApp Green */
+    padding: 15px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.footer-right-fixed a {
+    text-decoration: none;
+}
+
+/* Hover effect for fixed icons */
+.footer-right-fixed .message-icon:hover {
+    background-color: #333; /* Darker black on hover */
+}
+
+.footer-right-fixed .whatsapp-icon:hover {
+    background-color: #128C7E; /* Darker green for WhatsApp */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .about-image-wrapper {
+                width: 48%; /* Still two images per row */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-image-wrapper {
+                width: 100%; /* On mobile, show 1 image per row */
+            }
+
+            .about-us-section h2 {
+                font-size: 28px; /* Adjust font size for smaller screens */
+            }
+
+            .about-us-section p {
+                font-size: 14px; /* Adjust font size for smaller screens */
+            }
+
+            .image-name {
+                font-size: 14px; /* Adjust font size for small screens */
+            }
+
+            .image-position {
+                font-size: 12px; /* Adjust font size for small screens */
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+
+<div class="content" id="about-us">
+ <!-- Navigation Bar -->
+ <div class="nav-menu" id="navMenu">
+    <span class="close-btn" id="closeBtn"><i class="fas fa-times"></i></span>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="Projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="service.html">Services</a></li>
+    </ul>
+</div>
+ <!-- Header -->
+ <div class="header">
+    <span class="hamburger" id="hamburger"><i class="fas fa-bars"></i></span>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class="about-us-section">
+        <h2>About MCCA Studio Design</h2>
+        <p>MCCA Studio Design Company is an architecture design firm located in Gisozi, Kigali, Rwanda. Our team is dedicated to bringing innovative and sustainable architectural solutions to our clients. We specialize in creating spaces that are both functional and aesthetically pleasing, contributing to the growth and development of the Rwandan architecture landscape.</p>
+        
+        <div class="about-images">
+            <!-- First Row of Images -->
+            <div class="about-image-row">
+                <div class="about-image-wrapper">
+                    <img src="MCCA/frank1.jpg" alt="Person 1" class="about-image">
+                    <div class="image-name">Bagenzi Frank</div>
+                    <div class="image-position">Architect</div>
+                </div>
+                <div class="about-image-wrapper">
+                    <img src="MCCA/blandine.jpg" alt="Person 2" class="about-image">
+                    <div class="image-name">Blandine</div>
+                    <div class="image-position">Designer</div>
+                </div>
+            </div>
+
+            <!-- Second Row of Images -->
+            <div class="about-image-row">
+                <div class="about-image-wrapper">
+                    <img src="MCCA/songa.jpg" alt="Person 3" class="about-image">
+                    <div class="image-name">Songa</div>
+                    <div class="image-position">Project Manager</div>
+                </div>
+                <div class="about-image-wrapper">
+                    <img src="MCCA/tata.jpeg" alt="Person 4" class="about-image">
+                    <div class="image-name">Emily Brown</div>
+                    <div class="image-position">Engineer</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-description">
+            <h3>Our Mission</h3>
+            <p>At MCCA Studio Design, our mission is to create innovative and sustainable architecture that enhances the environment and improves the quality of life. We aim to bring creative and forward-thinking design solutions to every project we take on, whether residential, commercial, or public spaces.</p>
+            
+            <h3>Our Vision</h3>
+            <p>We envision being a leading architecture firm in Rwanda and beyond, known for our commitment to quality, sustainability, and design excellence. Our vision is to contribute to the development of Rwanda’s architectural landscape through unique and impactful designs.</p>
+
+            <h3>Our Team</h3>
+            <p>Our team is composed of talented professionals who are passionate about architecture and design. We work together to bring our clients' ideas to life, combining creativity, functionality, and technical expertise. We value collaboration, innovation, and attention to detail in every project.</p>
+        </div>
+    </section>
+</div>
+ <!-- Footer Section -->
+ <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-left">
+            <a href="index.html">
+                <img src="MCCA/MCCA 2.jpg" alt="Logo">
+            </a>
+        </div>
+        <div class="footer-center">
+            <a href="https://www.instagram.com" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+        </div>
+        <div class="footer-right">
+            <a href="contact.html">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://wa.me/1234567890" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; MCCA Studio Design 2021. All rights reserved. Design and development by MCCA Design
+    </div>
+</footer>
+<!-- Fixed Message and WhatsApp Icons (Right) -->
+<div class="footer-right-fixed">
+    <a href="contact.html" class="message-icon">
+        <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://wa.me/+250784518888" target="_blank" class="whatsapp-icon">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const closeBtn = document.getElementById('closeBtn');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.style.left = '0px';
+    });
+
+    closeBtn.addEventListener('click', () => {
+        navMenu.style.left = '-250px';
+    });
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

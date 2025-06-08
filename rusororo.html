@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rusororo Project</title>
+    <link rel="icon" href="favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16">
+    <link rel="icon" href="favicon-96x96.png" sizes="96x96">
+    <link rel="icon" href="favicon.ico">
+
+    <link rel="icon" type="image/x-icon" href="MCCA/MCCA 1.jpg">
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #d3d3d3; /* Grey background for the body */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body covers the full height */
+        }
+
+
+
+/* Header Section */
+.header {
+            
+    color: white;
+    text-align: center;
+  
+    font-size: 24px;
+    font-weight: bold;
+    
+    
+}
+
+
+
+
+/* Navigation Bar */
+.nav-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: blue;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding-top: 60px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu ul li {
+    padding: 15px 20px;
+    border-bottom: 1px solid #444;
+}
+
+.nav-menu ul li a {
+    color:white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-menu ul li a:hover {
+    text-decoration: underline;
+    color: #25D366;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: black;
+    z-index: 2;
+}
+
+.hamburger:hover {
+    color: #ccc;
+}
+
+/* Close Icon */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Full Screen Background Image (Fixed) */
+        .background-image {
+            background-image: url('MCCA/MCCA\ 23.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Fix the background image */
+            height: 100vh; /* Full screen height */
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Keeps the image behind the content */
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: auto; /* Push the footer to the bottom */
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+        }
+
+        /* Left: Logo */
+        .footer-left img {
+            width: 100px; /* Adjust logo size */
+            cursor: pointer;
+        }
+
+        .footer-left img:hover {
+            opacity: 0.8; /* Hover effect for logo */
+        }
+
+        /* Center: Social Media Icons */
+        .footer-center {
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* Space between icons */
+        }
+
+        .footer-center i {
+            font-size: 36px; /* Increased icon size */
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .footer-center i:hover {
+            color: #0077b5; /* Change color on hover */
+        }
+
+        /* Right: Message and WhatsApp Icons */
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px; /* Space between icons */
+        }
+
+        .footer-right a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 30px; /* Increased icon size */
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-right a:hover {
+            color: #0077b5; /* Hover effect */
+        }
+
+        /* Bottom: Copyright */
+        .footer-bottom {
+            text-align: center;
+            font-size: 14px;
+            border-top: 1px solid #333;
+            padding-top: 10px;
+            width: 100%;
+        }
+
+        /* Top Section (Full screen with content) */
+        .section-top {
+            padding: 0;
+            height: 100vh; /* Full screen height */
+            background-image: url('MCCA/MCCA\ 23.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            margin-top: 0; /* Ensure space for footer */
+        }
+
+        .section-top h2 {
+            font-size: 24px;
+            color: white; /* White text for contrast */
+            text-align: center;
+            padding-top: 40vh; /* Pushes the text to the middle */
+        }
+
+        .section-top p {
+            font-size: 16px;
+            color: white;
+            text-align: center;
+        }
+
+        /* Content Selection Container */
+        .content-selection {
+            position: relative;
+            margin-top: 100vh; /* Push the content below the top section */
+            padding: 20px;
+            background-color: white;
+        }
+
+        /* First Section of Content (Top part of content selection) */
+        .section-one {
+            padding: 100px;
+            background-color: white;
+            position: relative;
+            z-index: 1;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        /* Section B */
+        .section-B {
+            padding: 50px;
+            background-color: white;
+            position: relative;
+            z-index: 1;
+            margin-top: 0;
+            text-align: center;
+            background-color: #e6e6e6; /* Light grey background */
+        }
+
+        .section-B img {
+            max-width: 100%; /* Makes the image responsive */
+            height: auto; /* Maintains aspect ratio */
+            display: block;
+            margin: 0 auto; /* Centers the image */
+        }
+
+        /* Second Section of Content (Bottom part of content selection) */
+        .section-two {
+            padding: 50px;
+            background-color: white;
+            position: relative;
+            z-index: 1;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .section-two img {
+            max-width: 100%; /* Makes the image responsive */
+            height: auto; /* Maintains aspect ratio */
+            display: block;
+            margin: 0 auto; /* Centers the image */
+        }
+
+        .section-two h2 {
+            font-size: 24px;
+        }
+
+        .section-two p {
+            font-size: 16px;
+        }
+
+/* Styling for the scroll button container */
+.scroll-button {
+    position: fixed; /* Keeps the button fixed while scrolling */
+    bottom: 20px; /* Positions it 20px above the bottom */
+    left: 20px; /* Positions it 20px from the left side */
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Aligns buttons vertically */
+    gap: 10px; /* Adds space between buttons */
+    z-index: 2;
+}
+
+/* Styling for individual buttons */
+.scroll-button button {
+    padding: 10px 15px; /* Adds padding inside the button */
+    background-color: black; /* Blue background color */
+    color: white; /* White text color */
+    border: none; /* Removes the default border */
+    border-radius: 5px; /* Rounds the corners of the button */
+    cursor: pointer; /* Changes cursor to a pointer on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow effect */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for buttons */
+.scroll-button button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+
+
+
+
+
+
+
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .section-top h2 {
+                font-size: 22px;
+                padding-top: 30vh; /* Adjust padding for smaller screens */
+            }
+
+            .section-top p {
+                font-size: 14px;
+            }
+
+            .section-one {
+                padding: 60px;
+            }
+
+            .section-one h2 {
+                font-size: 22px;
+            }
+
+            .section-one p {
+                font-size: 14px;
+            }
+
+            .section-B {
+                padding: 30px;
+            }
+
+            .section-B h2 {
+                font-size: 22px;
+            }
+
+            .section-B p {
+                font-size: 14px;
+            }
+
+            .section-two {
+                padding: 40px;
+            }
+
+            .section-two h2 {
+                font-size: 22px;
+            }
+
+            .section-two p {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-top h2 {
+                font-size: 18px;
+                padding-top: 20vh; /* Adjust padding for very small screens */
+            }
+
+            .section-top p {
+                font-size: 12px;
+            }
+
+            .section-one {
+                padding: 40px;
+            }
+
+            .section-one h2 {
+                font-size: 20px;
+            }
+
+            .section-one p {
+                font-size: 12px;
+            }
+
+            .section-B {
+                padding: 20px;
+            }
+
+            .section-B h2 {
+                font-size: 20px;
+            }
+
+            .section-B p {
+                font-size: 12px;
+            }
+
+            .section-two {
+                padding: 30px;
+            }
+
+            .section-two h2 {
+                font-size: 20px;
+            }
+
+            .section-two p {
+                font-size: 12px;
+            }
+        }
+
+          /* Fix the message and WhatsApp icons to the right */
+          .footer-right-fixed {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Message Icon (Black background) */
+        .footer-right-fixed .message-icon {
+            background-color: black; /* Black background */
+            padding: 15px;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* WhatsApp Icon (Green background) */
+        .footer-right-fixed .whatsapp-icon {
+            background-color: #25D366; /* WhatsApp Green */
+            padding: 15px;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-right-fixed a {
+            text-decoration: none;
+        }
+
+        /* Hover effect for fixed icons */
+        .footer-right-fixed .message-icon:hover {
+            background-color: #333; /* Darker black on hover */
+        }
+
+        .footer-right-fixed .whatsapp-icon:hover {
+            background-color: #128C7E; /* Darker green for WhatsApp */
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+<div class="nav-menu" id="navMenu">
+    <span class="close-btn" id="closeBtn"><i class="fas fa-times"></i></span>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="Projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="service.html">Services</a></li>
+    </ul>
+</div>
+ <!-- Header -->
+ <div class="header">
+    <span class="hamburger" id="hamburger"><i class="fas fa-bars"></i></span>
+
+</div>
+
+
+    <!-- Full Screen Background Image (Fixed behind the content) -->
+    <div class="background-image"></div>
+
+    <!-- Top Section (Full screen with content) -->
+    <div class="section-top">
+        <h2>THEO</h2>
+        <p> ESTATE
+            RUSORORO.</p>
+    </div>
+
+    <!-- First Section of Content -->
+    <div class="section-one">
+        <h2>Architectural Description – Theo Estate, Rusororo</h2>
+        <p>Theo Estate in Rusororo is a thoughtfully planned residential 
+            development that embodies contemporary housing design tailored to the growing 
+            urban lifestyle of Kigali’s middle and upper-class families.</p>
+            <p>
+            Nestled in the serene, green hills of Rusororo, the estate offers a blend of comfort, elegance, and functionality through its carefully crafted housing units and neighborhood layout.
+            </p>
+            <p>
+            The estate features a mix of single-family villas and townhouses, each designed with a modern architectural language that prioritizes clean lines, open floor plans, and seamless indoor-outdoor connections. </p>
+            <p>The houses are arranged along landscaped internal roads, with adequate spacing and private gardens to promote privacy and a strong sense of community.</p>
+            Modern materials define the aesthetic and performance of the buildings.</p>
+            <p>
+            <p> The structures utilize reinforced concrete frames and block masonry walls, providing durability and thermal mass.</p>
+            <p> Façades incorporate smooth plaster finishes, stone cladding accents, aluminum-framed sliding windows, and tempered glass balustrades, creating a sleek and elegant appearance. </p>
+             <p> Flat or gently sloped roofs, finished with waterproof membrane and thermal insulation, add to the estate’s contemporary appeal.</p>
+            <p>Interiors are finished with high-quality materials such as porcelain tiles, gypsum ceilings with recessed lighting, and modern joinery for kitchens and wardrobes.</p> 
+        <p> Large openings and skylights allow for abundant natural light and ventilation, enhancing comfort and reducing energy use.</p>
+    <p>  Security and infrastructure are integral to the estate’s design, featuring perimeter fencing, CCTV systems, paved roads, and reliable utilities, including solar water heaters and rainwater harvesting systems.</p>
+            Theo Estate stands as a benchmark for modern suburban housing in Kigali, offering residents a balance of aesthetic value, construction quality, and sustainable living within a well-planned community environment.</p>
+    </div>
+
+    <!-- Content Selection -->
+    <div class="content-selection">
+        <!-- Section B (Centered Image) -->
+        <div class="section-B">
+            <h2></h2>
+            <p></p>
+            <img src="MCCA/mm.jpg" alt="Placeholder Image"> <!-- Replace with actual image -->
+        </div>
+
+        <!-- Second Section of Content -->
+        <div class="section-two">
+            <h2></h2>
+            <p></p>
+            <img src="MCCA/mm.jpg" alt="Placeholder Image">
+        </div>
+        <!--Third Section of content-->
+        <div class="section-two">
+            <h2></h2>
+            <p> </p>
+            <img src="MCCA/12.jpg" alt="Placeholder Image"> <!-- Replace with actual image -->
+        </div>
+    </div>
+
+    <!-- Footer Section at the bottom -->
+    <div class="footer">
+        <div class="footer-content">
+            <!-- Left: Logo -->
+            <div class="footer-left">
+                <a href="index.html">
+                    <img src="MCCA/MCCA 2.jpg" alt="Logo">
+                </a>
+            </div>
+
+            <!-- Center: Social Media Icons -->
+            <div class="footer-center">
+                <a href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+            </div>
+
+            <!-- Right: Message and WhatsApp Icons -->
+            <div class="footer-right">
+                <a href="contact.html">
+                    <i class="fas fa-envelope"></i> <!-- Message Icon -->
+                </a>
+                <a href="https://wa.me/1234567890" target="_blank">
+                    <i class="fab fa-whatsapp"></i> <!-- WhatsApp Icon -->
+                </a>
+            </div>
+        </div>
+
+        <!-- Bottom: Copyright -->
+        <div class="footer-bottom">
+            <p>&copy; MCCA Studio Design 2021. All rights reserved. Design and development by MCCA STUDIO Design.</p>
+        </div>
+    </div>
+
+     <!-- Fixed Message and WhatsApp Icons (Right) -->
+     <div class="footer-right-fixed">
+        <a href="contact.html" class="message-icon">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://wa.me/+250784518888" target="_blank" class="whatsapp-icon">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    <!-- Container for scroll buttons -->
+<div class="scroll-button">
+    <!-- Button to scroll to the top -->
+    <button onclick="scrollToTop()">Go to Top</button>
+    <!-- Button to scroll to the bottom -->
+    <button onclick="scrollToBottom()">Go to Bottom</button>
+</div>
+
+
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        const closeBtn = document.getElementById('closeBtn');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.style.left = '0px';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            navMenu.style.left = '-250px';
+        });
+
+
+
+// Function to scroll to the top of the page
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to the top
+}
+
+// Function to scroll to the bottom of the page
+function scrollToBottom() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); // Smooth scroll to the bottom
+}
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

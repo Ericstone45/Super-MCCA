@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sustainability - MCCA DESIGN</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    nav.navbar {
+      background-color: #000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .logo {
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    ul.nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+    ul.nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    ul.nav-links li a:hover,
+    ul.nav-links li a.active {
+      color: #0056a3;
+    }
+
+    /* Hamburger styles */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .hamburger span {
+      height: 3px;
+      width: 50px;
+      background: white;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      ul.nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #000;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+      }
+      ul.nav-links li {
+        margin: 10px 0;
+      }
+      ul.nav-links.show {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 90px auto 40px;
+      padding: 0 20px;
+    }
+    h1, h2 {
+      color: #004080;
+    }
+    h1 {
+      margin-bottom: 15px;
+      font-size: 36px;
+      text-align: center;
+    }
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+    .sustainability-cards {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+      flex: 1 1 280px;
+      max-width: 350px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .card img {
+      width: 100%;
+      max-width: 280px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      margin-bottom: 15px;
+      flex-shrink: 0;
+    }
+    .card h3 {
+      margin-bottom: 12px;
+      color: #222;
+    }
+
+    @media (max-width: 1024px) {
+      .container {
+        padding: 0 15px;
+      }
+      .card {
+        max-width: 45%;
+      }
+    }
+    @media (max-width: 768px) {
+      .sustainability-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .card {
+        max-width: 90%;
+        margin-bottom: 30px;
+      }
+    }
+
+    .footer {
+      background-color: #000;
+      color: #fff;
+      padding: 20px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      box-sizing: border-box;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      margin-bottom: 20px;
+    }
+    .footer-left img {
+      width: 100px;
+      cursor: pointer;
+    }
+    .footer-center {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+    .footer-center i {
+      font-size: 36px;
+      color: #fff;
+      cursor: pointer;
+    }
+    .footer-center i:hover {
+      color: #0077b5;
+    }
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 15px;
+    }
+    .footer-right a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+    }
+    .footer-right a.whatsapp-icon {
+      background-color: #25D366;
+      padding: 5px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+    }
+    .footer-right a.whatsapp-icon i {
+      color: white;
+    }
+    .footer-right a:hover {
+      color: #0077b5;
+    }
+    .footer-bottom {
+      text-align: center;
+      font-size: 14px;
+      border-top: 1px solid #333;
+      padding-top: 10px;
+      width: 100%;
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.nav-links');
+      menu.classList.toggle('show');
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">MCCA DESIGN</div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="service.html">Services</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <h1>Our Commitment to Sustainability</h1>
+  <p>At MCCA DESIGN, we believe in creating architectural solutions that are environmentally responsible and resource-efficient...</p>
+
+  <h2>Key Sustainability Initiatives</h2>
+  <div class="sustainability-cards">
+    <div class="card">
+      <img src="MCCA/residential house.jpg" alt="Eco-friendly House" />
+      <h3>Eco-friendly Materials</h3>
+      <p>We prioritize the use of sustainable, recycled, and locally sourced materials...</p>
+    </div>
+    <div class="card">
+      <img src="MCCA/MCCA PORTIFILIO 2025-WEBSITE27.jpg" alt="Solar Powered House" />
+      <h3>Renewable Energy</h3>
+      <p>Incorporating solar panels and other renewable energy sources...</p>
+    </div>
+    <div class="card">
+      <img src="MCCA/pirote house.jpg" alt="Water Conservation House" />
+      <h3>Water Conservation</h3>
+      <p>Implementing rainwater harvesting, low-flow fixtures...</p>
+    </div>
+    <div class="card">
+      <img src="MCCA/Nyamata.jpg" alt="Waste Reduction in Construction" />
+      <h3>Waste Reduction</h3>
+      <p>Designing for waste minimization during construction...</p>
+    </div>
+  </div>
+
+  <h2>Why Sustainability Matters</h2>
+  <p>Sustainable architecture not only helps protect our environment...</p>
+</div>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-left">
+      <img src="MCCA/MCCA 2.jpg" alt="MCCA" />
+    </div>
+    <div class="footer-center">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="footer-right">
+      <a href="mailto:Mccadesignstudio@gmail.com"><i class="fas fa-envelope"></i> Mccadesignstudio@gmail.com</a>
+      <a href="https://wa.me/1234567890" class="whatsapp-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="tel:+250784518888"><i class="fas fa-phone"></i> +250 (784) 518-888</a>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2025 MCCA DESIGN. All rights reserved.</div>
+</footer>
+
+</body>
+</html>

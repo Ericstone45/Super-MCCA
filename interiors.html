@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interiors - MCCA DESIGN</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    nav.navbar {
+      background-color: #000;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #ff4444;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: red;
+      margin: 4px 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .container {
+      margin-top: 80px;
+      padding: 20px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h1 {
+      font-size: 36px;
+      text-align: center;
+      color: #004080;
+      margin-bottom: 20px;
+    }
+
+    .interior-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .interior-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      max-width: 350px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .interior-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .interior-card h3 {
+      margin: 10px 0 5px;
+      color: #222;
+    }
+
+    .interior-card p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    footer .footer-content {
+      max-width: 1000px;
+      width: 100%;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 14px;
+      margin: 10px 0;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    footer a:hover {
+      color: #ff4444;
+    }
+  </style>
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.nav-links');
+      nav.classList.toggle('show');
+    }
+  </script>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">MCCA DESIGN</div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="interiors.html">Interiors</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>Interior Design Showcase</h1>
+
+    <div class="interior-gallery">
+
+      <div class="interior-card">
+        <!-- Interior Image 1 -->
+        <img src="MCCA/interior1.jpg" alt="Modern Living Room" />
+        <h3>Modern Living Room</h3>
+        <p>Elegant living space with natural light and minimal design.</p>
+      </div>
+
+      <div class="interior-card">
+        <!-- Interior Image 2 -->
+        <img src="MCCA/interior2.jpg" alt="Luxury Kitchen" />
+        <h3>Luxury Kitchen</h3>
+        <p>Contemporary kitchen with high-end appliances and marble finish.</p>
+      </div>
+
+      <div class="interior-card">
+        <!-- Interior Image 3 -->
+        <img src="MCCA/interior3.jpg" alt="Cozy Bedroom" />
+        <h3>Cozy Bedroom</h3>
+        <p>Warm and stylish bedroom with comfort and elegance.</p>
+      </div>
+
+      <div class="interior-card">
+        <!-- Interior Image 4 -->
+        <img src="MCCA/interior4.jpg" alt="Office Interior" />
+        <h3>Office Interior</h3>
+        <p>Productive workspace with ergonomic furniture and clean lines.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 MCCA DESIGN. All rights reserved.</p>
+      <p>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="projects.html">Projects</a> |
+        <a href="interiors.html">Interiors</a> |
+        <a href="contact.html">Contact</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

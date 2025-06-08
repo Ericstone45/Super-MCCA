@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Our Team</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16">
+    <link rel="icon" href="favicon-96x96.png" sizes="96x96">
+    <link rel="icon" href="favicon.ico">
+
+    <link rel="icon" type="image/x-icon" href="MCCA/MCCA 1.jpg">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+  <style>
+    html, body {
+      font-family: "Roboto", sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 50px auto;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+
+    /* Navigation Bar */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background-color:black;
+        color: blue;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        transition: left 0.3s ease;
+        z-index: 1000;
+        padding-top: 60px;
+    }
+
+    .nav-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-menu ul li {
+        padding: 15px 20px;
+        border-bottom: 1px solid #444;
+    }
+
+    .nav-menu ul li a {
+        color:white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .nav-menu ul li a:hover {
+        text-decoration: underline;
+        color: #25D366;
+    }
+
+    /* Hamburger Icon */
+    .hamburger {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        cursor: pointer;
+        font-size: 24px;
+        color: black;
+    }
+
+    .hamburger:hover {
+        color: #ccc;
+    }
+
+    /* Close Icon */
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .left-column, .right-column {
+      padding: 20px;
+    }
+
+    .left-column {
+      flex: 1;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .right-column {
+      flex: 2;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-left: 20px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .profile-info p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .skills, .languages {
+      margin-top: 20px;
+    }
+
+    .skills p, .languages p {
+      margin: 5px 0;
+    }
+
+    .progress-bar {
+      height: 10px;
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+
+    .progress-bar div {
+      height: 100%;
+      background-color: #4caf50;
+      border-radius: 5px;
+    }
+/* Footer Section */
+.footer {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width:1400px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto; /* Center footer horizontally */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+}
+
+/* Left: Logo */
+.footer-left img {
+    width: 100px; /* Adjust logo size */
+    cursor: pointer;
+}
+
+.footer-left img:hover {
+    opacity: 0.8; /* Hover effect for logo */
+}
+
+/* Center: Social Media Icons */
+.footer-center {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between icons */
+}
+
+.footer-center i {
+    font-size: 36px; /* Increased icon size */
+    color: #fff;
+    cursor: pointer;
+}
+
+.footer-center i:hover {
+    color: #0077b5; /* Change color on hover */
+}
+
+/* Fix the message and WhatsApp icons to the right */
+.footer-right-fixed {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Message Icon (Black background) */
+.footer-right-fixed .message-icon {
+    background-color: black; /* Black background */
+    padding: 15px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+/* Right: Message and WhatsApp Icons */
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px; /* Space between icons */
+}
+
+.footer-right a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px; /* Increased icon size */
+    display: flex;
+    align-items: center;
+}
+
+.footer-right a:hover {
+    color: #0077b5; /* Hover effect */
+}
+
+/* Bottom: Copyright */
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    width: 100%;
+}
+
+/* Fix the message and WhatsApp icons to the right */
+.footer-right-fixed {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+/* WhatsApp Icon (Green background) */
+.footer-right-fixed .whatsapp-icon {
+    background-color: #25D366; /* WhatsApp Green */
+    padding: 15px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.footer-right-fixed a {
+    text-decoration: none;
+}
+
+/* Hover effect for fixed icons */
+.footer-right-fixed .message-icon:hover {
+    background-color: #333; /* Darker black on hover */
+}
+
+.footer-right-fixed .whatsapp-icon:hover {
+    background-color: #128C7E; /* Darker green for WhatsApp */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+
+    <div class="content" id="about-us">
+        <!-- Navigation Bar -->
+        <div class="nav-menu" id="navMenu">
+           <span class="close-btn" id="closeBtn"><i class="fas fa-times"></i></span>
+           <ul>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="about.html">About Us</a></li>
+               <li><a href="Projects.html">Projects</a></li>
+               <li><a href="contact.html">Contact</a></li>
+           </ul>
+       </div>
+        <!-- Header -->
+        <div class="header">
+           <span class="hamburger" id="hamburger"><i class="fas fa-bars"></i></span>
+       
+       </div>
+       
+
+  <div class="container">
+
+    <!-- Left Column -->
+    <div class="left-column">
+      <div class="profile">
+        <img src="MCCA/B.jpg" alt="Avatar">
+        <div class="profile-info">
+          <h2>Bagenzi Frank</h2>
+          <p><i class="fa fa-briefcase"></i> Designer</p>
+          <p><i class="fa fa-home"></i> KIGALI, GASABO</p>
+          <p><i class="fa fa-envelope"></i> bagenzifrank@mail.com</p>
+          <p><i class="fa fa-phone"></i> +250784518888</p>
+        </div>
+
+        <div class="skills">
+          <h3>Skills</h3>
+          <p>Design Skills</p>
+          <div class="progress-bar"><div style="width: 100%;"></div></div>
+          <p>Photography</p>
+          <div class="progress-bar"><div style="width: 80%;"></div></div>
+          <p>Illustrator</p>
+          <div class="progress-bar"><div style="width: 75%;"></div></div>
+          <p>Media</p>
+          <div class="progress-bar"><div style="width: 50%;"></div></div>
+        </div>
+
+        <div class="languages">
+          <h3>Languages</h3>
+          <p>Kinyarwanda</p>
+          <div class="progress-bar"><div style="width: 100%;"></div></div>
+          <p>English</p>
+          <div class="progress-bar"><div style="width: 80%;"></div></div>
+          <p>French</p>
+          <div class="progress-bar"><div style="width: 70%;"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-column">
+      <div class="work-experience">
+        <h2>Work Experience</h2>
+        <div>
+          <h4>Design</h4>
+          <p>Jan 2015 - Present</p>
+          <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur.</p>
+        </div>
+        <hr>
+        <div>
+          <h4>Web Developer / something.com</h4>
+          <p>Mar 2012 - Dec 2014</p>
+          <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur.</p>
+        </div>
+        <hr>
+        <div>
+          <h4>Graphic Designer / designsomething.com</h4>
+          <p>Jun 2010 - Mar 2012</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+
+      <div class="education">
+        <h2>Education</h2>
+        <div>
+          <h4>W3Schools.com</h4>
+          <p>Forever</p>
+          <p>Web Development! All I need to know in one place</p>
+        </div>
+        <hr>
+        <div>
+          <h4>London Business School</h4>
+          <p>2013 - 2015</p>
+          <p>Master Degree</p>
+        </div>
+        <hr>
+        <div>
+          <h4>School of Coding</h4>
+          <p>2010 - 2013</p>
+          <p>Bachelor Degree</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+ <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-left">
+            <a href="index.html">
+                <img src="MCCA/MCCA 2.jpg" alt="Logo">
+            </a>
+        </div>
+        <div class="footer-center">
+            <a href="https://www.instagram.com" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+                <i class="fab fa-x-twitter"></i>
+            </a>
+        </div>
+        <div class="footer-right">
+            <a href="contact.html">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://wa.me/1234567890" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; MCCA Studio Design 2021. All rights reserved. Design and development by MCCA Design
+    </div>
+</footer>
+
+<!-- Fixed Message and WhatsApp Icons (Right) -->
+<div class="footer-right-fixed">
+    <a href="contact.html" class="message-icon">
+        <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://wa.me/+250784518888" target="_blank" class="whatsapp-icon">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const closeBtn = document.getElementById('closeBtn');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.style.left = '0px';
+    });
+
+    closeBtn.addEventListener('click', () => {
+        navMenu.style.left = '-250px';
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="icon" href="favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16">
+    <link rel="icon" href="favicon-96x96.png" sizes="96x96">
+    <link rel="icon" href="favicon.ico">
+
+    <link rel="icon" type="image/x-icon" href="MCCA/MCCA 1.jpg">
+        <!-- FontAwesome -->
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        /* Content Selection Container */
+        .content-selection {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-top:0;
+        }
+
+        /* Header Section */
+        .header {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+           
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        /* Navigation Bar */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color:black;
+            color: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease;
+            z-index: 1000;
+            padding-top: 60px;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-menu ul li {
+            padding: 15px 20px;
+            border-bottom: 1px solid #444;
+        }
+
+        .nav-menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .nav-menu ul li a:hover {
+            text-decoration: underline;
+            color: #25D366;
+        }
+
+        /* Hamburger Icon */
+        .hamburger {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+
+        .hamburger:hover {
+            color: #ccc;
+        }
+
+        /* Close Icon */
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 40px 20px;
+        }
+
+        .content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        /* Map Section */
+        .map {
+            width: 100%;
+            height: 400px;
+            margin-top: 40px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Social Media Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .social-links a {
+            margin: 0 15px;
+            font-size: 24px;
+            text-decoration: none;
+            color: white;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.1);
+        }
+
+        .social-links .twitter {
+            background-color: black;
+        }
+
+        .social-links .facebook {
+            background-color: blue;
+        }
+
+        .social-links .whatsapp {
+            background-color: green;
+        }
+
+        /* Form Section */
+        .contact-form {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;  /* Centers the form horizontally */
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .contact-form h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: black;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header {
+                font-size: 20px;
+                padding: 15px;
+            }
+
+            .content h1 {
+                font-size: 28px;
+            }
+
+            .content p {
+                font-size: 16px;
+            }
+
+            .social-links a {
+                margin: 0 10px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <!-- Content Selection -->
+    <div class="content-selection">
+        <!-- Navigation Bar -->
+        <div class="nav-menu" id="navMenu">
+            <span class="close-btn" id="closeBtn"><i class="fas fa-times"></i></span>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="Projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="service.html">Services</a></li>
+            </ul>
+        </div>
+
+        <!-- Header -->
+        <div class="header">
+            <span class="hamburger" id="hamburger"><i class="fas fa-bars"></i></span>
+            Get in Touch With MCCA STUDIO DESIGN
+        </div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <h1>Contact Us</h1>
+            <p>We’d love to hear from you! Whether you have questions, feedback, or just want to say hello, feel free to reach out to us.</p>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <h2>Get in Touch</h2>
+            <form action="contact.php" method="POST">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter your name">
+                
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="4" required placeholder="Enter your message"></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15961.558749924958!2d30.0535052024703!3d-1.944072270920027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca5b09bcf780b%3A0x7bc29d276cf3f358!2sKigali%20Genocide%20Memorial!5e0!3m2!1sen!2srw!4v1691805932057!5m2!1sen!2srw" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="social-links">
+            <a href="https://twitter.com" target="_blank" class="twitter" title="Follow us on X"><i class="fab fa-twitter"></i></a>
+            <a href="https://facebook.com" target="_blank" class="facebook" title="Follow us on Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://wa.me" target="_blank" class="whatsapp" title="Chat with us on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        const closeBtn = document.getElementById('closeBtn');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.style.left = '0px';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            navMenu.style.left = '-250px';
+        });
+    </script>
+
+</body>
+</html>

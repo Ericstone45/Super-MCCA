@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCCA STUDIO DESIGN</title>
+    <link rel="icon" href="favicon-32x32.png" sizes="32x32">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16">
+    <link rel="icon" href="favicon-96x96.png" sizes="96x96">
+    <link rel="icon" href="favicon.ico">
+
+    <link rel="icon" type="image/x-icon" href="MCCA/MCCA 1.jpg">
+        <!-- FontAwesome -->
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color:#f0f0f0; /* Grey background for entire page */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+       
+        /* Ensure the container spans the full width and has no extra margin or padding */
+        .container {
+            width: 100%;
+            max-width: 1200px; /* Set a max-width for larger screens */
+            margin: 0 auto;
+            box-sizing: border-box; /* Include padding and border in width calculation */
+        }
+
+        /* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+   padding: 20px;
+    position: relative;
+   
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar li {
+    margin-left: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+     color: #25D366;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 4px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Side Navigation Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -500px; /* Initially hidden */
+    width: 200px;
+    height: 100%;
+    color: black;
+    background-color:black;
+    transition: right 0.3s ease;
+    padding: 20px;
+    z-index: 20; /* Ensure it's above the background image */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 50px;
+}
+
+.side-menu li {
+    margin: 20px 0;
+}
+
+.side-menu a {
+    color:white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.side-menu a:hover {
+    color: #25D366;
+}
+
+/* Close Button */
+.close-btn {
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    animation: backgroundSlide 15s infinite;
+    z-index: 1;
+    flex-grow: 1;
+}
+
+
+        /* Image Slider */
+        .image-slider {
+            width: 100%;
+            height: 600px;
+            background-size: cover;
+            background-position: center;
+            animation: backgroundSlide 20s infinite;
+            margin: 0; /* No margin to avoid overflow */
+            display: block;
+        }
+
+        @keyframes backgroundSlide {
+            0% { background-image: url('MCCA/MCCA\ 15.jpg'); }
+            20% { background-image: url('MCCA/MCCA\ 26.jpg'); }
+            40% { background-image: url('MCCA/MCCA\ 23.jpg'); }
+            60% { background-image: url('MCCA/MCCA\ 27.jpg'); }
+            80% { background-image: url('MCCA/MCCA\ 18.jpg'); }
+            100% { background-image: url('MCCA/MCCA\ 5.jpg'); }
+        }
+
+
+        /* Responsive Styles */
+@media (max-width: 768px) {
+    .image-slider {
+        height: 400px; /* Reduce height for smaller screens */
+        background-size: contain; /* Prevent cropping of images */
+        background-repeat: no-repeat;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-slider {
+        height: 300px; /* Further reduce height for very small screens */
+        background-size: contain; /* Ensure full image is visible */
+        background-repeat: no-repeat; /* Avoid repeating the background */
+    }
+}
+
+        /* Content Section */
+        .content {
+            width: 100%;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: -10px; /* To bring content closer to the slider */
+            box-sizing: border-box; /* Make sure padding is inside width */
+        }
+
+
+
+
+        .main-section {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 50px 20px;
+            background-color: white;
+        }
+
+        /* Adjust the image container to be on the right side */
+        .right-image-container {
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .right-image-container img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .right-image-container:hover img {
+            transform: scale(1.1); /* Zoom effect on hover */
+            opacity: 0.8; /* Make image slightly transparent */
+        }
+
+        /* Text container on the left side */
+        .left-content-container {
+            width: 35%;
+            margin-right: 20px; /* Space between text and image */
+        }
+
+        .left-content-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .left-content-container p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+
+
+
+        .arrow {
+            font-size: 20px; /* Increases the size of the arrow */
+            color: green; /* Change arrow color */
+        }
+
+        /* Make the layout responsive */
+        @media (max-width: 768px) {
+            .main-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .right-image-container {
+                width: 100%;
+                margin-bottom: 20px;
+                
+            }
+            
+            .left-content-container {
+                width: 90%;
+                margin-right: 0;
+                
+            }
+           
+           
+        }
+
+
+
+     
+
+       
+        
+        
+
+
+
+
+        .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .slides div {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .slides {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            animation: slide 10s infinite;
+        }
+
+        .slider {
+            position: relative;
+            top:75%;
+            width: 80%;
+            max-width: 1200px;
+            height: 600px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes slide {
+            0% { transform: translateY(0); }
+            20% { transform: translateY(0); }
+            25% { transform: translateY(-100%); }
+            45% { transform: translateY(-100%); }
+            50% { transform: translateY(-200%); }
+            70% { transform: translateY(-200%); }
+            75% { transform: translateY(-300%); }
+            95% { transform: translateY(-300%); }
+            100% { transform: translateY(0); }
+        }
+
+        .slides div:hover {
+            cursor: pointer;
+            opacity: 0.8;
+            
+        }
+
+
+        /* Responsive styles */
+@media (max-width: 768px) {
+    .slider {
+        width: 95%; /* Make the slider take more space on smaller screens */
+        height: 200px; /* Reduce height for smaller screens */
+    }
+
+    .slides div {
+        height: 100%; /* Ensure individual slides scale properly */
+    }
+}
+
+@media (max-width: 480px) {
+    .slider {
+        width: 100%; /* Full width on very small screens */
+        height: 200px; /* Further reduce height for very small screens */
+    }
+
+    .slides img {
+        object-fit: contain; /* Adjust object-fit to avoid cropping on small screens */
+    }
+}
+
+
+
+
+
+
+
+        .section {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 50px 20px;
+            background-color: white;
+        }
+
+        .image-container {
+            width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden; /* Ensure the image does not overflow when zoomed */
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s ease, opacity 0.3s ease; /* Transition for scale and opacity */
+        }
+
+        .image-container:hover img {
+            transform: scale(1.1); /* Scale the image on hover */
+            opacity: 0.8; /* Make the image slightly transparent on hover */
+        }
+
+        .content-container {
+            width: 35%;
+            margin-left: 20px;
+        }
+
+        .content-container h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .content-container p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Make the layout responsive */
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image-container {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .content-container {
+                width: 90%;
+            }
+           
+        }
+
+
+
+
+
+        .team-section {
+            background-color: #fff;
+            padding: 30px 0;
+        }
+
+        .team-section h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Team members container */
+        .team-members {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            width: 180px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .team-member:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+
+        .team-member img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .team-member:hover img {
+            transform: scale(1.1); /* Zoom effect on hover */
+        }
+
+        .team-member h3 {
+            font-size: 18px;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        /* Position text below name */
+        .position {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* Social media icons */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .social-links a {
+            margin: 0 8px;
+            font-size: 20px;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #0077b5; /* Blue color for links */
+        }
+
+
+
+         /* Styling for the scroll button container */
+         .scroll-button {
+            position: fixed; /* Keeps the button fixed while scrolling */
+            bottom: 20px; /* Positions it 20px above the bottom */
+            left: 20px; /* Positions it 20px from the left side */
+            display: flex; /* Enables flexbox layout */
+            flex-direction: column; /* Aligns buttons vertically */
+            gap: 10px; /* Adds space between buttons */
+        }
+
+        /* Styling for individual buttons */
+        .scroll-button button {
+            padding: 10px 15px; /* Adds padding inside the button */
+            background-color: black; /* Blue background color */
+            color: white; /* White text color */
+            border: none; /* Removes the default border */
+            border-radius: 5px; /* Rounds the corners of the button */
+            cursor: pointer; /* Changes cursor to a pointer on hover */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow effect */
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        }
+
+        /* Hover effect for buttons */
+        .scroll-button button:hover {
+            background-color: white; /* Darker blue on hover */
+        }
+
+        /* Make the layout responsive */
+        @media (max-width: 768px) {
+            .team-members {
+                justify-content: center;
+            }
+
+            .team-member {
+                width: 150px;
+            }
+        }
+
+
+
+
+        /* Logo Section */
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white; /* Grey background */
+            padding: 50px 10px;
+        
+            width: 100%;
+            max-width: 1200px;
+        
+        }
+        /* Logo Container */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 40px; /* Space between logo and text */
+            flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+            max-width: 1200px;
+            width: 90%; /* Make it responsive */
+        }
+
+        .logo-container img {
+            width: 300px; /* Logo size */
+            height: auto;
+        }
+
+        /* Text Content */
+        .right-content {
+            color: #333;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px; /* Space between text lines */
+        }
+
+        .right-content span {
+            line-height: 1.5;
+        }
+
+        .contact-link {
+            font-size: 18px;
+            color: black;
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .contact-link:hover {
+            color: #0056a3; /* Darker blue on hover */
+        }
+
+        .contact-link i {
+            font-size: 22px;
+            margin-left: 8px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .logo-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .right-content {
+                text-align: center;
+                align-items: center;
+                
+            }
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            padding: 20px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            box-sizing: border-box;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto; /* Center footer horizontally */
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+        }
+
+        /* Left: Logo */
+        .footer-left img {
+            width: 100px; /* Adjust logo size */
+            cursor: pointer;
+        }
+
+        .footer-left img:hover {
+            opacity: 0.8; /* Hover effect for logo */
+        }
+
+        /* Center: Social Media Icons */
+        .footer-center {
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* Space between icons */
+        }
+
+        .footer-center i {
+            font-size: 36px; /* Increased icon size */
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .footer-center i:hover {
+            color: #0077b5; /* Change color on hover */
+        }
+
+        /* Right: Message and WhatsApp Icons */
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px; /* Space between icons */
+        }
+
+        .footer-right a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 30px; /* Increased icon size */
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-right a.whatsapp-icon {
+            background-color: #25D366; /* WhatsApp Green */
+            padding: 5px;
+            border-radius: 50%; /* Circular shape */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+        }
+        .footer-right a.whatsapp-icon i {
+            color: white; /* Icon color */
+        }
+
+
+        .footer-right a:hover {
+            color: #0077b5; /* Hover effect */
+        }
+
+        /* Bottom: Copyright */
+        .footer-bottom {
+            text-align: center;
+            font-size: 14px;
+            border-top: 1px solid #333;
+            padding-top: 10px;
+            width: 100%;
+        }
+
+          /* Fix the message and WhatsApp icons to the right */
+        .footer-right-fixed {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Message Icon (Black background) */
+        .footer-right-fixed .message-icon {
+            background-color: black; /* Black background */
+            padding: 15px;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* WhatsApp Icon (Green background) */
+        .footer-right-fixed .whatsapp-icon {
+            background-color: #25D366; /* WhatsApp Green */
+            padding: 15px;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-right-fixed a {
+            text-decoration: none;
+        }
+
+        /* Hover effect for fixed icons */
+        .footer-right-fixed .message-icon:hover {
+            background-color: #333; /* Darker black on hover */
+        }
+
+        .footer-right-fixed .whatsapp-icon:hover {
+            background-color: #128C7E; /* Darker green for WhatsApp */
+        }
+
+
+        /* Responsive Navigation Menu */
+        @media (max-width: 768px) {
+            
+                .navbar ul {
+                    display: none;
+                    
+                }
+                
+     
+                
+            
+                .hamburger {
+                    display: flex;
+                }
+            .text-box {
+                margin: 0;
+                width: 80%;
+                top:0;
+                left: 10%;
+                font-size: 20px;
+                position: absolute;
+                z-index: 2;
+            }
+                
+        
+            .right-image {
+                width: 100%;
+                height: 400px;
+               
+            }
+            .text-overlap {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar{
+                position: fixed;
+                width: 95%;
+                z-index: 20;
+            }
+           
+        
+        }
+       
+
+        .navbar .logo {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top:20px;
+            color: white;
+            
+        }
+
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+
+    <div class="container">
+        <!-- Navigation Bar -->
+        
+    <nav class="navbar">
+        <div class="logo">MCCA DESIGN</div>
+        
+        
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="service.html">Services</a></li>
+        </ul>
+       
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    
+    <!-- Side Navigation Menu -->
+    <div class="side-menu" id="side-menu">
+        <span class="close-btn" id="close-btn">&#10005;</span>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="Projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="service.html">Services</a></li>
+        </ul>
+    </div>
+
+        <!-- Image Slider Section -->
+        <div class="image-slider"></div>
+
+        <!-- Content Section -->
+        <div class="content">
+            <h1>Welcome to Our MCCA DESIGN STUDIO</h1>
+            <p>We specialize in innovative designs that transform spaces and elevate the urban experience. Our projects range from residential to commercial, always pushing the boundaries of creativity and functionality.</p>
+            
+            <section>
+                <div class="main-section">
+                    <div class="left-content-container">
+                        <h2>MASAKA-CYIMO</h2>
+                        <p>We are thrilled to unveil our latest architectural endeavor in the vibrant community of Masaka-Cyimo.
+                            This project represents a fusion of innovative design, sustainability, and functionality, aimed at transforming the local landscape while preserving its cultural essence   .</p>
+                        <p>Our team has meticulously crafted designs that cater to both the aesthetic and practical needs of the area, ensuring structures that are not only visually stunning but also environmentally conscious.
+                            With a focus on modern architecture, this project is set to redefine the standards of design and construction in the region.
+                            </p>
+                            <p>Join us in celebrating this groundbreaking initiative as we bring our vision to life in Masaka-Cyimo!</p>
+                    </div>
+                    <div class="right-image-container">
+                        <a href="https://www.example.com" target="_blank">
+                            <img src="MCCA/MCCA 18.jpg" alt="Sample Image">
+                        </a>
+                    </div>
+                </div>
+                
+            </section>
+
+           
+                
+                <section class="kaka">
+                    <h2></h2>
+                    <div class="slider">
+                        <div class="slides">
+                            <div class="slide1" onclick="window.location.href='rusororo.html'"><img src="MCCA/MCCA 5.jpg" alt="Image 1"></div>
+                            <div class="slide2" onclick="window.location.href='Project-two.html'"><img src="MCCA/MCCA 18.jpg" alt="Image 2"></div>
+                            <div class="slide3" onclick="window.location.href='rusororo.html'"><img src="MCCA/MCCA 11.jpg" alt="Image 3"></div>
+                            <div class="slide4" onclick="window.location.href='rusororo.html'"><img src="MCCA/MCCA 15.jpg" alt="Image 4"></div>
+                            <div class="slide5" onclick="window.location.href='rusororo.html'"><img src="MCCA/MCCA 26.jpg" alt="Image 5"></div>
+                        </div>
+                    </div> 
+                </section>
+                
+            
+
+            <section>
+               
+                <div class="section">
+                    <div class="image-container">
+                        <a href="rusororo.html" target="_blank">
+                        <img src="MCCA/MCCA 23.jpg" alt="Sample Image"></a>
+                    </div>
+                    <div class="content-container">
+                        <h2>RUSORORO-NYAGAHINGA</h2>
+                        <p>Residential House Project in Rusororo-Nyagahinga.
+                        This beautiful residential house in Rusororo-Nyagahinga,
+                        Runyonza, is designed with modern style and comfort in mind.
+                       The project blends contemporary architecture with the natural surroundings,
+                     
+                   creating a peaceful and functional home</p>
+
+                        <p>Every detail of the house is carefully planned to meet modern needs while maintaining a connection to the serene environment. 
+                            This project reflects our dedication to building spaces that improve living experiences.</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+
+
+
+<!-- Container wrapping the content -->
+<div class="container">
+    <!-- Our Team Section -->
+    <div class="team-section">
+        <h2 style="text-align:center">Meet Our Team</h2>
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <a href="team-one.html" target="_blank">
+                    <img src="MCCA/frank1.jpg" alt="Team Member 1">
+                </a>
+                <h3>Frank Bagenzi</h3>
+                <div class="position">Manager</div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <a href="team-one.html" target="_blank">
+                    <img src="MCCA/blandine.jpg" alt="Team Member 2">
+                </a>
+                <h3>Blandine</h3>
+                <div class="position">Director General</div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <a href="team-one.html" target="_blank">
+                    <img src="MCCA/songa.jpg" alt="Team Member 3">
+                </a>
+                <h3>Songa</h3>
+                <div class="position">Lead Developer</div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <!-- Team Member 4 -->
+            <div class="team-member">
+                <a href="team-one.html" target="_blank">
+                    <img src="MCCA/tata.jpeg" alt="Team Member 4">
+                </a>
+                <h3>Emily Davis</h3>
+                <div class="position">Designer</div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FontAwesome for social media icons -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</section>
+
+
+<section class="logo-section">
+    <div class="logo-container">
+        <!-- Logo Image -->
+        <img src="MCCA/MCCA 2.jpg" alt="Logo">
+        
+        <!-- Right Content -->
+        <div class="right-content">
+            <span><h1>WE DESIGN SOLUTIONS FOR</h1></span> 
+            <span><h1>THE FUTURE</h1> </span>
+            <span><h1>AND IN THE PRESENT .</h1></span>
+            <a href="contact.html" class="contact-link">
+                Contact <i>+</i>
+            </a>
+        </div>
+    </div>
+</section>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Left: Logo -->
+            <div class="footer-left">
+                <a href="index.html">
+                    <img src="MCCA/MCCA 2.jpg" alt="Logo">
+                </a>
+            </div>
+    
+            <!-- Center: Social Media Icons -->
+            <div class="footer-center">
+                <a href="https://www.instagram.com" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+            </div>
+    
+            <!-- Right: Message and WhatsApp Icons -->
+            <div class="footer-right">
+                <a href="contact.html">
+                    <i class="fas fa-envelope"></i> <!-- Message Icon -->
+                </a>
+                <a href="https://wa.me/+250784518888" target="_blank" class="whatsapp-icon">
+                    <i class="fab fa-whatsapp"></i> <!-- WhatsApp Icon -->
+                </a>
+            </div>
+        </div>
+    
+        <!-- Bottom: Copyright -->
+        <div class="footer-bottom">
+            &copy; MCCA Studio Design 2021. All rights reserved. Design and development by MCCA STUDIO Design
+        </div>
+    </footer>
+    
+    
+    
+    <!-- Fixed Message and WhatsApp Icons (Right) -->
+    <div class="footer-right-fixed">
+        <a href="contact.html">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://wa.me/+250784518888" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    <!-- Container for scroll buttons -->
+<div class="scroll-button">
+    <!-- Button to scroll to the top -->
+    <button onclick="scrollToTop()"><div class="arrow">&#8593;</div></button>
+    <!-- Button to scroll to the bottom -->
+    <button onclick="scrollToBottom()"> <div class="arrow">&#8595;</div></button>
+</div>
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('active');
+        }
+        // JavaScript for Navigation Toggle
+document.getElementById('hamburger').addEventListener('click', function() {
+    document.getElementById('side-menu').style.right = '0'; // Show side menu
+});
+
+// JavaScript for Closing the Side Menu
+document.getElementById('close-btn').addEventListener('click', function() {
+    document.getElementById('side-menu').style.right = '-250px'; // Hide side menu
+});
+
+   // Function to scroll to the top of the page
+   function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to the top
+}
+
+// Function to scroll to the bottom of the page
+function scrollToBottom() {
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); // Smooth scroll to the bottom
+}
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
